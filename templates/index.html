@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function copyLinkToClipboard(link) {
+            var textArea = document.createElement("textarea");
+            textArea.value = link;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textArea);
+            alert("Ссылка скопирована в буфер обмена: " + link);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Добро пожаловать!</h1>
+        <h2>Загрузите файл</h2>
+        <form method="POST" action="/upload" enctype="multipart/form-data" class="upload-form">
+            <input type="file" name="file" required>
+            <input type="submit" value="Загрузить" class="btn-upload">
+        </form>
+        <h2>Загруженные файлы</h2>
+        <ul class="file-list">
+            {% for filename in filenames %}
+            <li class="file-item">
+                <a href="{{ url_for('uploaded_file', filename=filename) }}">{{ filename }}</a>
+                <a href="{{ url_for('uploaded_file', filename=filename) }}" download class="download-link">Скачать</a>
+                <a href="{{ url_for('delete_file', filename=filename) }}" class="delete-link">Удалить файл</a>
+                <button onclick="copyLinkToClipboard('{{ url_for('uploaded_file', filename=filename) }}')" class="btn-copy">Копировать ссылку</button>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+
