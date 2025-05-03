@@ -361,3 +361,10 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/FileShare.sln
+/FileShare.pyproj
+/app.py
+/min.env
+/static/style.css
+/templates/index.html
+/FileShare.pyproj
