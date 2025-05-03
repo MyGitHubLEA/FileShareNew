@@ -1,92 +1,106 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: sans-serif;
+    background-color: #f0f0f0;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stacks elements vertically */
+    min-height: 100vh; /* Ensures the body takes up at least the full viewport height */
 }
 
 .container {
     max-width: 800px;
-    margin: auto;
-    background: white;
+    margin: 20px auto;
+    background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Allows the main content to grow to fill space */
 }
 
-h1, h2 {
-    color: #007BFF;
+h1 {
+    color: #333;
+    text-align: center;
 }
 
-.upload-form {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
-
-    .upload-form input[type="file"] {
-        margin-bottom: 10px;
-    }
-
-.btn-upload {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-    .btn-upload:hover {
-        background-color: #0056b3;
-    }
-
-.file-list {
-    list-style-type: none;
+ul {
+    list-style: none;
     padding: 0;
 }
 
-.file-item {
+li {
+    margin-bottom: 10px;
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fafafa;
     display: flex;
-    justify-content: space-between; /* Сохраняем выравнивание по краям */
-    align-items: center;
+    justify-content: space-between; /* Space out the items within the list item */
+    align-items: center; /* Vertically align items */
 }
 
-    .file-item a {
-        text-decoration: none;
-        color: #007BFF;
-        margin-right: 10px; /* отступ между ссылками */
+.btn {
+    margin-left: 10px;
+}
+
+.flash-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+    .flash-message.success {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
     }
 
-        .file-item a:hover {
-            text-decoration: underline;
+    .flash-message.error {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+
+    .flash-message.info {
+        background-color: #d1ecf1;
+        color: #0c5460;
+        border: 1px solid #bee5eb;
+    }
+
+nav {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 0;
+}
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center; /* Centers the links */
+    }
+
+    nav li {
+        margin: 0 15px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+    }
+
+        nav a:hover {
+            background-color: #555;
         }
 
-.download-link {
-    color: #28a745;
-    margin-right: 10px;
-}
-
-.btn-container {
-    display: flex; /* Используем Flexbox для кнопок */
-    gap: 10px; /* Отступ между кнопками */
-}
-
-.btn-copy {
-    background-color: #007BFF;
+.footer {
+    background-color: #343a40;
     color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto; /* Pushes the footer to the bottom */
+    width: 100%; /* Ensures the footer spans the full width */
 }
-
-    .btn-copy:hover {
-        background-color: #0056b3;
-    }
-

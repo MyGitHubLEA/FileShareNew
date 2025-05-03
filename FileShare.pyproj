@@ -22,11 +22,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.py" />
+    <Compile Include="config.py" />
+    <Compile Include="models.py" />
+    <Compile Include="forms.py" />
+    <Compile Include="routes.py" />
+    <Compile Include="_init_.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="min.env" />
+    <Content Include="min.env">
+      <Publish>True</Publish>
+    </Content>
     <Content Include="static\style.css" />
+    <Content Include="templates\base.html" />
     <Content Include="templates\index.html" />
+    <Content Include="templates\login.html" />
+    <Content Include="templates\register.html" />
+    <Content Include="templates\view.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="static\" />

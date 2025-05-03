@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    {% if title %}
+    <title>{{ title }} - FileShare</title>
+    {% else %}
+    <title>Welcome to FileShare</title>
+    {% endif %}
+</head>
+<body>
+    <div>
+        Account:
+        {% if current_user.is_anonymous %}
+            <a href="{{ url_for('register') }}">New user?</a>
+            <a href="{{ url_for('login') }}">Login</a>
+        {% else %}
+            {{login}}
+            <a href="{{ url_for('logout') }}">Logout</a>
+        {% endif %}
+    </div>
+    <div>Your way to share: <a href="/index">Home</a></div>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
+
+
+
+
+
+
+
