@@ -1,106 +1,257 @@
+/* General Styles */
 body {
-    font-family: sans-serif;
-    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column; /* Stacks elements vertically */
-    min-height: 100vh; /* Ensures the body takes up at least the full viewport height */
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 960px;
+    margin: 20px auto;
     margin: 20px auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    flex: 1; /* Allows the main content to grow to fill space */
+    flex: 1;
 }
 
-h1 {
+h1, h2 {
     color: #333;
     text-align: center;
 }
 
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+/* Header and Footer */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+    header a {
+        color: #fff;
+        margin: 0 10px;
+    }
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav li {
+    margin-left: 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: #555;
+    transition: background-color 0.3s ease;
+}
+
+    nav a:hover {
+        background-color: #777;
+    }
+
+/* Flash Messages */
+.flash-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid;
+}
+
+    .flash-message.success {
+        background-color: #d4edda;
+        color: #155724;
+        border-color: #c3e6cb;
+    }
+
+    .flash-message.error {
+        background-color: #f8d7da;
+        color: #721c24;
+        border-color: #f5c6cb;
+    }
+
+    .flash-message.info {
+        background-color: #d1ecf1;
+        color: #0c5460;
+        border-color: #bee5eb;
+    }
+
+/* Forms */
+form {
+    margin-top: 20px;
+}
+
+.form-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+/* Стили для полей ввода */
+input[type="text"],
+input[type="password"] {
+    width: 70%; /* Уменьшаем ширину до 70% */
+    margin-left: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="file"] {
+    width: auto; /* Оставляем автоширину для поля загрузки */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Стили для кнопок */
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    margin-left: 20px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+.btn-upload {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 30px; /* Увеличиваем расстояние до 30px */
+}
+
+    .btn-upload:hover {
+        background-color: #218838;
+    }
+
+.copy-link-button {
+    background-color: #17a2b8;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 5px;
+}
+
+    .copy-link-button:hover {
+        background-color: #138496;
+    }
+
+/* Стили для списка файлов */
+.file-upload-container {
+    display: flex;
+    align-items: center;
+}
+
+    .file-upload-container input[type="file"] {
+        margin-right: 20px; /* Добавляем отступ справа от поля загрузки */
+    }
+
+/* Остальные стили остаются без изменений */
+
+/* Контейнер для форм регистрации/авторизации */
+.auth-form {
+    max-width: 400px;
+ 
+    margin-left: 20px;
+}
+
+/* Общий контейнер для контента */
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+
+/* File List */
 ul {
     list-style: none;
     padding: 0;
 }
 
 li {
-    margin-bottom: 10px;
     padding: 10px;
+    margin-bottom: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    background-color: #fafafa;
+    background-color: #f9f9f9;
     display: flex;
-    justify-content: space-between; /* Space out the items within the list item */
-    align-items: center; /* Vertically align items */
+    justify-content: space-between;
+    align-items: center;
 }
 
-.btn {
-    margin-left: 10px;
-}
-
-.flash-message {
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-}
-
-    .flash-message.success {
-        background-color: #d4edda;
-        color: #155724;
-        border: 1px solid #c3e6cb;
-    }
-
-    .flash-message.error {
-        background-color: #f8d7da;
-        color: #721c24;
-        border: 1px solid #f5c6cb;
-    }
-
-    .flash-message.info {
-        background-color: #d1ecf1;
-        color: #0c5460;
-        border: 1px solid #bee5eb;
-    }
-
-nav {
-    background-color: #343a40;
-    color: white;
-    padding: 10px 0;
-}
-
-    nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center; /* Centers the links */
-    }
-
-    nav li {
-        margin: 0 15px;
-    }
-
-    nav a {
-        color: white;
-        text-decoration: none;
-        padding: 5px 10px;
-        border-radius: 4px;
-    }
-
-        nav a:hover {
-            background-color: #555;
-        }
-
-.footer {
-    background-color: #343a40;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: auto; /* Pushes the footer to the bottom */
-    width: 100%; /* Ensures the footer spans the full width */
-}
