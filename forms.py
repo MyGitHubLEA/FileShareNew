@@ -7,13 +7,12 @@ import sqlalchemy as sa
 from _init_ import db
 from models import Users
 from  wtforms.validators import Length, Regexp
-
+import re
 
 class RegistrationForm(FlaskForm):
     login = StringField('Login', validators = [DataRequired()])
-    password = StringField('Password', validators = [DataRequired(), 
-                                                     Length(min=8, max=100), 
-                                                     Regexp(r'[A-Za-z]', message = 'password must contain at least one letter')])
+    password = PasswordField('Password', validators = [DataRequired(), 
+                                                     Length(min=8, max=100)])
     password2 = PasswordField(
         'Repeat your password', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Register')
@@ -30,9 +29,8 @@ class RegistrationForm(FlaskForm):
 
 class LoginForm(FlaskForm):
     login = StringField('Login', validators = [DataRequired()])
-    password = StringField('Password', validators = [DataRequired()])
+    password = PasswordField('Password', validators = [DataRequired()])
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Sign In')
     def validate_password(self, extra):
         return self.password != '' and self.login != ''
-        
