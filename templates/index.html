@@ -5,15 +5,7 @@
 {% block content %}
 <div class="container">
     <h1>Welcome, {{ current_user.login }}!</h1>
-    {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-    {% for category, message in messages %}
-
-    {{ message }}
-
-    {% endfor %}
-    {% endif %}
-    {% endwith %}
+   
 
     <h2>Upload File</h2>
     <form method="POST" action="/upload" enctype="multipart/form-data" class="upload-form">  
